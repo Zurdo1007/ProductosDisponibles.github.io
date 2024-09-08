@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Disponibles</title>
+    <!-- Favicon PNG -->
+    <link rel="icon" href="img/favicon.ico" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #686868;
+        }
+        .header {
+            background: #f79494;
+            padding: 20px;
+            border-bottom: 2px solid #000000;
+            text-align: center;
+            align-items: left;
+            gap: 20px; /* Espacio entre el logo y el título */   /*display: flex;*/
+        }
+        .header img {
+            height: 16px; /* Ajusta el tamaño del logo según sea necesario */
+        }
+        .header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(105, 105, 105, 0.747);
+            flex: 1;
+            min-width: 200px;
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .item h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .item p {
+            font-size: 1em;
+            color: #555;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #ffffff;
+            background: #25D366; /* Color de WhatsApp */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #128C7E; /* Color de WhatsApp en hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="img/favicon.ico" alt="Logo"  >
+        <h1 >Productos Disponibles</h1>
+    </header>
+    <div class="container">
+        <div class="catalog">
+            <!-- Item 1 -->
+            <div class="item">
+                <img src="img/retro2.jpg" alt="Artículo 1" >
+                <h2>Artículo 1</h2>
+                <p>Descripción breve del artículo 1.</p>
+                <button class="button" onclick="notifyOwner('Artículo 1')">Estoy interesado</button>
+            </div>
+            <!-- Item 2 -->
+            <div class="item">
+                <img src="img/retro.jpg" alt="Artículo 2">
+                <h2>Artículo 2</h2>
+                <p>Descripción breve del artículo 2.</p>
+                <button class="button" onclick="notifyOwner('Artículo 2')">Estoy interesado</button>
+            </div>
+            <!-- Agregar más artículos según sea necesario -->
+             <div class="item">
+                <img src="img/th.jpg" alt="Articulo 3">
+                <h2>Producto Dispnible </h2>
+                <p>Descripcion</p>
+                <button class="button" onclick="notifyOwner('Artículo 1')">Estoy interesado</button>
+             </div>
+             
+             <div class="item">
+                <img src="img/logo.png" alt="Articulo 4 ">
+                <h2>Producto Disponibles</h2>
+                <p>Breve Descripcion</p>
+                <button class="button" onclick="notifyOwner('Artículo 1')">Estoy interesado</button>
+             </div>
+        </div>
+    </div>
+
+    <script>
+        function notifyOwner(itemName) {
+            const phoneNumber = '3028542802'; // Número de WhatsApp del dueño (incluye el código de país, sin símbolos como +)
+            const message = encodeURIComponent('Hola, estoy interesado en el artículo: ' + itemName);
+            const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+</body>
+</html>
